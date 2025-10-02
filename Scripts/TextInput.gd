@@ -13,4 +13,5 @@ func _on_text_changed() -> void:
 
 
 func _on_timer_timeout() -> void:
-	grab_focus()
+	if has_focus() == false:
+		grab_focus()

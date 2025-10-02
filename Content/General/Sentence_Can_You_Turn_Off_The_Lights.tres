@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_8klan")
 Sentence = "你能关灯吗"
-TranslatedSentence = "Can you turn on the lights"
+TranslatedSentence = "Can you turn off the lights"
 Pinyin = "Nǐ néng guān dēng ma"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"
