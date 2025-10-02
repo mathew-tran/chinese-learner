@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_6vvm3")
-Sentence = "登录"
-TranslatedSentence = "Login"
+Sentence = "历史"
+TranslatedSentence = "History"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"

@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_im6j8")
-Sentence = "奶茶"
-TranslatedSentence = "Milk Tea"
+Sentence = "一杯咖啡"
+TranslatedSentence = "Cup of Coffee"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"

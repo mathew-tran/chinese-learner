@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_7vh7l")
-Sentence = "一百克花生"
-TranslatedSentence = "100g of peanuts"
+Sentence = "我想要一个勺子"
+TranslatedSentence = "I want a spoon"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"

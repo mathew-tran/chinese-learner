@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_yyxlp")
-Sentence = "游戏"
-TranslatedSentence = "Game"
+Sentence = "辞职"
+TranslatedSentence = "Quit"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"

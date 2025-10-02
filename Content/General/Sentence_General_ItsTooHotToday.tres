@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_86joa")
-Sentence = "医院在哪里"
-TranslatedSentence = "Where is the hospital?"
+Sentence = "今天太热了"
+TranslatedSentence = "It's too hot today."
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"

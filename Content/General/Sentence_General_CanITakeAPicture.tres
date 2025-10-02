@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_mmokd")
-Sentence = "你有洗手间吗"
-TranslatedSentence = "Do you have a washroom?"
+Sentence = "我可以拍照吗"
+TranslatedSentence = "Can I take a picture?"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"
