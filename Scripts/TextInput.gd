@@ -10,3 +10,7 @@ func _on_text_changed() -> void:
 		text = text.replace('\n', '')
 		OnEnterPressed.emit()
 	
+
+
+func _on_timer_timeout() -> void:
+	grab_focus()

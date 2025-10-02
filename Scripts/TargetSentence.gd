@@ -6,6 +6,8 @@ class_name TargetSentence
 var mainVoice
 var englishVoice
 
+signal CompletedTalking
+
 func _ready() -> void:
 	var voices = DisplayServer.tts_get_voices_for_language("zh")
 	var voice_id = voices[0]
@@ -23,3 +25,7 @@ func SaySentence():
 	
 func SayTranslatedSentence():
 	DisplayServer.tts_speak(Data.TranslatedSentence, englishVoice)
+	while DisplayServer.tts_is_speaking():
+		await get_tree().create_timer(.1).timeout
+	await get_tree().create_timer(1.5).timeout
+	CompletedTalking.emit()
