@@ -6,4 +6,5 @@
 script = ExtResource("1_0i5eu")
 Sentence = "你想要一根吸管吗"
 TranslatedSentence = "Would you like a straw?"
+Pinyin = "nǐ xiǎng yào yī gēn xī guǎn ma"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"

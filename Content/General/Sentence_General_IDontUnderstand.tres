@@ -6,4 +6,5 @@
 script = ExtResource("1_mfakc")
 Sentence = "我不明白"
 TranslatedSentence = "I don't understand"
+Pinyin = "wǒ bù míng bái"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"

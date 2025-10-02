@@ -6,4 +6,5 @@
 script = ExtResource("1_odjtr")
 Sentence = "橙汁"
 TranslatedSentence = "Orange Juice"
+Pinyin = "chéng zhī"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"

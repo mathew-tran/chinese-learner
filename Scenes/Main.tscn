@@ -85,7 +85,7 @@ offset_bottom = -132.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
-text = "hello"
+text = "nǐhǎo"
 
 [node name="TextEdit" type="TextEdit" parent="Panel"]
 custom_minimum_size = Vector2(1791.8, 80)
@@ -95,7 +95,7 @@ offset_top = 578.0
 offset_right = 1836.8
 offset_bottom = 658.0
 theme_override_font_sizes/font_size = 40
-placeholder_text = "enter here"
+placeholder_text = "enter in chinese characters here."
 emoji_menu_enabled = false
 middle_mouse_paste_enabled = false
 empty_selection_clipboard_enabled = false

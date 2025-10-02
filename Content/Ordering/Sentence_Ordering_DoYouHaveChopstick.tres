@@ -6,4 +6,5 @@
 script = ExtResource("1_wp6kp")
 Sentence = "你有筷子吗"
 TranslatedSentence = "Do you have chopsticks?"
+Pinyin = "nǐ yǒu kuài zi ma"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"

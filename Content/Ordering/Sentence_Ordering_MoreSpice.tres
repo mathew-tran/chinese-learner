@@ -5,5 +5,6 @@
 [resource]
 script = ExtResource("1_jw7lg")
 Sentence = "更辣"
-TranslatedSentence = "More Spice"
+TranslatedSentence = "More Spicy"
+Pinyin = "gèng là"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"

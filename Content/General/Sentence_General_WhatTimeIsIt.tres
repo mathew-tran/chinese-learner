@@ -6,4 +6,5 @@
 script = ExtResource("1_fcoae")
 Sentence = "现在是几奌"
 TranslatedSentence = "What time is it?"
+Pinyin = "xiàn zài shì jǐ diǎn"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"

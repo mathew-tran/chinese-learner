@@ -6,4 +6,5 @@
 script = ExtResource("1_jtog2")
 Sentence = "医院在哪里"
 TranslatedSentence = "Where is the hospital?"
+Pinyin = "yī yuàn zài nǎ lǐ"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"

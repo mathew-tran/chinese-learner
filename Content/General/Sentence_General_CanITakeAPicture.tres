@@ -6,4 +6,5 @@
 script = ExtResource("1_mmokd")
 Sentence = "我可以拍照吗"
 TranslatedSentence = "Can I take a picture?"
+Pinyin = "wǒ kě yǐ pāi zhào ma"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"
