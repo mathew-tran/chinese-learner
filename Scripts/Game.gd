@@ -10,11 +10,13 @@ extends Node2D
 var AllSentences
 
 var Index = 0
+var tryAmount = 0
+
 func _ready() -> void:
 	AllSentences = Helper.GetAllFilePaths("res://Content/")
 	for x in AllSentences:
 		print(x)
-	AllSentences.shuffle()
+	#AllSentences.shuffle()
 	ChooseNextSentence()
 	
 func ChooseNextSentence():
@@ -27,14 +29,27 @@ func ChooseNextSentence():
 	TranslatedText.text = ""
 	AnswerSymbol.Hide()
 	PlayerText.text = ""
+	$ProgressBar.value = Index
+	$ProgressBar.max_value = len(AllSentences)
+	$Panel/Pinyin.text = ""
 	Index += 1
 	PlayerText.editable = true
+	tryAmount = 0
+
 	
 func Retry():
 	await get_tree().create_timer(1.5).timeout
 	PlayerText.editable = true
 	AnswerSymbol.Hide()
+	ShowPinyin()
 	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("F1"):
+		TargetText.SaySentence()
+		FailAttempt()
+	if event.is_action_pressed("F2"):
+		ChooseNextSentence()
+		
 func _on_text_edit_on_enter_pressed() -> void:
 	PlayerText.editable = false
 	if(PlayerText.text == TargetText.text):
@@ -42,9 +57,9 @@ func _on_text_edit_on_enter_pressed() -> void:
 		
 		TranslatedText.text = Sentence.TranslatedSentence
 		AnswerSymbol.ShowState(StatusSymbol.STATE.CORRECT)
-		
 		TargetText.SayTranslatedSentence()
 		$GoodSFX.play()
+		ShowPinyin()
 	else:
 		print("INCORRECT!")
 		TargetText.SaySentence()
@@ -52,7 +67,14 @@ func _on_text_edit_on_enter_pressed() -> void:
 		AnswerSymbol.ShowState(StatusSymbol.STATE.INCORRECT)
 		Retry()
 		$BadSFX.play()
-
+		
+func FailAttempt():
+	tryAmount += 1
+	if(tryAmount >= 3):
+		ShowPinyin()
+		
+func ShowPinyin():
+	$Panel/Pinyin.text = Sentence.Pinyin
 
 func _on_target_sentence_completed_talking() -> void:
 	ChooseNextSentence()

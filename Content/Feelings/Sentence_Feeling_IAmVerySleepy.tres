@@ -6,4 +6,5 @@
 script = ExtResource("1_cejqe")
 Sentence = "我很困"
 TranslatedSentence = "I am sleepy."
+Pinyin = "wǒ hěnkùn"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"

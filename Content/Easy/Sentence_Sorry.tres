@@ -6,4 +6,5 @@
 script = ExtResource("1_gjj15")
 Sentence = "对不起"
 TranslatedSentence = "Sorry"
+Pinyin = "duìbùqǐ"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"

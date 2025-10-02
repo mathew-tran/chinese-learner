@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0h6o0scrjdcv"]
+[gd_scene load_steps=11 format=3 uid="uid://d0h6o0scrjdcv"]
 
 [ext_resource type="Script" uid="uid://b35cre6rngtif" path="res://Scripts/Game.gd" id="1_r150o"]
 [ext_resource type="Script" uid="uid://b4ftjc0rm3rvu" path="res://Scripts/TextInput.gd" id="2_idj7w"]
@@ -8,6 +8,12 @@
 [ext_resource type="Script" uid="uid://dc5g1pst2xkj3" path="res://Scripts/StatusSymbol.gd" id="6_v1gob"]
 [ext_resource type="AudioStream" uid="uid://bwsy6ig6nyv7n" path="res://Audio/chips-stack-1.ogg" id="7_50glp"]
 [ext_resource type="AudioStream" uid="uid://fd6nejgrbjes" path="res://Audio/chips-stack-2.ogg" id="8_vy5pj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50glp"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vy5pj"]
+bg_color = Color(0, 0.728248, 0.0423615, 1)
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("TargetText", "PlayerText", "TranslatedText", "AnswerSymbol")]
 script = ExtResource("1_r150o")
@@ -64,6 +70,23 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "hello"
 
+[node name="Pinyin" type="Label" parent="Panel"]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -232.0
+offset_right = 300.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "hello"
+
 [node name="TextEdit" type="TextEdit" parent="Panel"]
 custom_minimum_size = Vector2(1791.8, 80)
 layout_mode = 0
@@ -84,9 +107,9 @@ autostart = true
 
 [node name="Status" type="TextureRect" parent="."]
 offset_left = 571.0
-offset_top = 463.0
+offset_top = 383.0
 offset_right = 635.0
-offset_bottom = 527.0
+offset_bottom = 447.0
 texture = ExtResource("5_pbw6q")
 script = ExtResource("6_v1gob")
 
@@ -103,6 +126,39 @@ stream = ExtResource("7_50glp")
 
 [node name="BadSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_vy5pj")
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 44.0
+offset_right = 313.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 20
+text = "(F1) REPLAY AUDIO  | (F2) - SKIP"
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = 8.5
+offset_right = 1910.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_50glp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vy5pj")
+value = 10.0
+show_percentage = false
 
 [connection signal="CompletedTalking" from="Panel/TargetSentence" to="." method="_on_target_sentence_completed_talking"]
 [connection signal="OnEnterPressed" from="Panel/TextEdit" to="." method="_on_text_edit_on_enter_pressed"]

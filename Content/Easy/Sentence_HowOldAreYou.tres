@@ -6,4 +6,5 @@
 script = ExtResource("1_25j1e")
 Sentence = "你多大了"
 TranslatedSentence = "How Old Are You?"
+Pinyin = "nǐ duō dà le"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"

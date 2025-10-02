@@ -21,9 +21,11 @@ func SetSentence(data : SentenceData):
 	SaySentence()
 	
 func SaySentence():
+	DisplayServer.tts_stop()
 	DisplayServer.tts_speak(Data.Sentence, mainVoice)
 	
 func SayTranslatedSentence():
+	DisplayServer.tts_stop()
 	DisplayServer.tts_speak(Data.TranslatedSentence, englishVoice)
 	while DisplayServer.tts_is_speaking():
 		await get_tree().create_timer(.1).timeout

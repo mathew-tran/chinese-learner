@@ -6,4 +6,5 @@
 script = ExtResource("1_34bgk")
 Sentence = "退出"
 TranslatedSentence = "Logout"
+Pinyin = "tuìchū"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"
