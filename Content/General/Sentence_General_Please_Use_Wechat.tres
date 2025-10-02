@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://beqkx65bavcf"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_86s4s"]
+
+[resource]
+script = ExtResource("1_86s4s")
+Sentence = "请使用微信"
+TranslatedSentence = "Please use Wechat"
+Pinyin = "Qǐng shǐyòng wēixìn"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

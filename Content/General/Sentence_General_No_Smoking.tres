@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://dwnmw7xhg34ai"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_viwv7"]
+
+[resource]
+script = ExtResource("1_viwv7")
+Sentence = "禁止抽烟"
+TranslatedSentence = "No Smoking"
+Pinyin = "Jìnzhǐ chōuyān"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

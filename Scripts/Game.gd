@@ -16,7 +16,7 @@ func _ready() -> void:
 	AllSentences = Helper.GetAllFilePaths("res://Content/")
 	for x in AllSentences:
 		print(x)
-	#AllSentences.shuffle()
+	AllSentences.shuffle()
 	ChooseNextSentence()
 	
 func ChooseNextSentence():

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://b8whn2t5rc3hc"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_n3v5s"]
+
+[resource]
+script = ExtResource("1_n3v5s")
+Sentence = "我喜欢听音乐"
+TranslatedSentence = "I like to listen to music"
+Pinyin = "Wǒ xǐhuān tīng yīnyuè"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

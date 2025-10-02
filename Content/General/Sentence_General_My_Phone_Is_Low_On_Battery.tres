@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://va6td4y7a1q3"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_3i7v2"]
+
+[resource]
+script = ExtResource("1_3i7v2")
+Sentence = "我的手机电量不足"
+TranslatedSentence = "My phone is low on battery"
+Pinyin = "Wǒ de shǒujī diànliàng bùzú"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

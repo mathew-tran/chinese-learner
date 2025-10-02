@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://bk47gu1nfb4rc"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_p10td"]
+
+[resource]
+script = ExtResource("1_p10td")
+Sentence = "医院在哪里"
+TranslatedSentence = "Where is the Hospital?"
+Pinyin = "Yīyuàn zài nǎlǐ"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

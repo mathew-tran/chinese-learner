@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://7d3g50inh3av"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_s7vyp"]
+
+[resource]
+script = ExtResource("1_s7vyp")
+Sentence = "我喜欢看恐怖电影"
+TranslatedSentence = "I like to watch scary movies"
+Pinyin = "Wǒ xǐhuān kàn kǒngbù diànyǐng"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

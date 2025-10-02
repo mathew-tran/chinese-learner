@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://cmj2tfukykygi"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_32opj"]
+
+[resource]
+script = ExtResource("1_32opj")
+Sentence = "你能开灯吗"
+TranslatedSentence = "Can you turn on the lights"
+Pinyin = "Nǐ néng kāi dēng ma"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"
