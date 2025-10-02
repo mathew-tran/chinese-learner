@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0h6o0scrjdcv"]
+[gd_scene load_steps=12 format=3 uid="uid://d0h6o0scrjdcv"]
 
 [ext_resource type="Script" uid="uid://b35cre6rngtif" path="res://Scripts/Game.gd" id="1_r150o"]
 [ext_resource type="Script" uid="uid://b4ftjc0rm3rvu" path="res://Scripts/TextInput.gd" id="2_idj7w"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dc5g1pst2xkj3" path="res://Scripts/StatusSymbol.gd" id="6_v1gob"]
 [ext_resource type="AudioStream" uid="uid://bwsy6ig6nyv7n" path="res://Audio/chips-stack-1.ogg" id="7_50glp"]
 [ext_resource type="AudioStream" uid="uid://fd6nejgrbjes" path="res://Audio/chips-stack-2.ogg" id="8_vy5pj"]
+[ext_resource type="PackedScene" uid="uid://vkci5daj3uyn" path="res://Prefabs/LanguagePopup.tscn" id="9_vy5pj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50glp"]
 bg_color = Color(0, 0, 0, 1)
@@ -21,7 +22,7 @@ Sentence = ExtResource("2_rgh2o")
 TargetText = NodePath("Panel/TargetSentence")
 PlayerText = NodePath("Panel/TextEdit")
 TranslatedText = NodePath("Panel/TranslatedSentence")
-AnswerSymbol = NodePath("Status")
+AnswerSymbol = NodePath("Panel/Status")
 metadata/_edit_horizontal_guides_ = [-180.0]
 
 [node name="Panel" type="Panel" parent="."]
@@ -105,7 +106,8 @@ script = ExtResource("2_idj7w")
 wait_time = 0.2
 autostart = true
 
-[node name="Status" type="TextureRect" parent="."]
+[node name="Status" type="TextureRect" parent="Panel"]
+layout_mode = 0
 offset_left = 571.0
 offset_top = 383.0
 offset_right = 635.0
@@ -113,29 +115,31 @@ offset_bottom = 447.0
 texture = ExtResource("5_pbw6q")
 script = ExtResource("6_v1gob")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 49.0
 offset_top = 673.0
 offset_right = 374.0
 offset_bottom = 715.0
 theme_override_font_sizes/font_size = 30
-text = "press enter to validate"
+text = "press [enter] to validate"
 
-[node name="GoodSFX" type="AudioStreamPlayer2D" parent="."]
+[node name="GoodSFX" type="AudioStreamPlayer2D" parent="Panel"]
 stream = ExtResource("7_50glp")
 
-[node name="BadSFX" type="AudioStreamPlayer2D" parent="."]
+[node name="BadSFX" type="AudioStreamPlayer2D" parent="Panel"]
 stream = ExtResource("8_vy5pj")
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 10.0
-offset_top = 44.0
+offset_top = -1036.0
 offset_right = 313.0
-offset_bottom = 72.0
+offset_bottom = -1008.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
@@ -143,22 +147,30 @@ theme_override_font_sizes/font_size = 20
 text = "(F1) REPLAY AUDIO  | (F2) - SKIP"
 vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="Panel"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 10.0
-offset_top = 8.5
-offset_right = 1910.0
-offset_bottom = 35.5
+offset_left = -950.0
+offset_top = -531.5
+offset_right = 950.0
+offset_bottom = -504.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_50glp")
 theme_override_styles/fill = SubResource("StyleBoxFlat_vy5pj")
 value = 10.0
 show_percentage = false
+
+[node name="VBoxContainer" parent="Panel" instance=ExtResource("9_vy5pj")]
+layout_mode = 0
+offset_left = 853.0
+offset_top = 965.0
+offset_right = 1153.0
+offset_bottom = 1023.0
 
 [connection signal="CompletedTalking" from="Panel/TargetSentence" to="." method="_on_target_sentence_completed_talking"]
 [connection signal="OnEnterPressed" from="Panel/TextEdit" to="." method="_on_text_edit_on_enter_pressed"]

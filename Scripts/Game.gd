@@ -29,8 +29,8 @@ func ChooseNextSentence():
 	TranslatedText.text = ""
 	AnswerSymbol.Hide()
 	PlayerText.text = ""
-	$ProgressBar.value = Index
-	$ProgressBar.max_value = len(AllSentences)
+	$Panel/ProgressBar.value = Index
+	$Panel/ProgressBar.max_value = len(AllSentences)
 	$Panel/Pinyin.text = ""
 	Index += 1
 	PlayerText.editable = true
@@ -58,7 +58,7 @@ func _on_text_edit_on_enter_pressed() -> void:
 		TranslatedText.text = Sentence.TranslatedSentence
 		AnswerSymbol.ShowState(StatusSymbol.STATE.CORRECT)
 		TargetText.SayTranslatedSentence()
-		$GoodSFX.play()
+		$Panel/GoodSFX.play()
 		ShowPinyin()
 	else:
 		print("INCORRECT!")
@@ -66,7 +66,7 @@ func _on_text_edit_on_enter_pressed() -> void:
 		PlayerText.text = ""
 		AnswerSymbol.ShowState(StatusSymbol.STATE.INCORRECT)
 		Retry()
-		$BadSFX.play()
+		$Panel/BadSFX.play()
 		
 func FailAttempt():
 	tryAmount += 1
