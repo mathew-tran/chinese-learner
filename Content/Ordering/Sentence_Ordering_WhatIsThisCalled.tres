@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://buw16g4oc4xdu"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_7uciy"]
+
+[resource]
+script = ExtResource("1_7uciy")
+Sentence = "这叫什么"
+TranslatedSentence = "What is this Called?"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

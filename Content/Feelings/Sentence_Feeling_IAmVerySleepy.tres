@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://c3jko570mfgev"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_cejqe"]
+
+[resource]
+script = ExtResource("1_cejqe")
+Sentence = "我很困"
+TranslatedSentence = "I am sleepy."
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

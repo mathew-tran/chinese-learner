@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://dsc6unarsfn6x"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_7l1ra"]
+
+[resource]
+script = ExtResource("1_7l1ra")
+Sentence = "我想吃冰淇淋"
+TranslatedSentence = "I want to eat ice cream"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

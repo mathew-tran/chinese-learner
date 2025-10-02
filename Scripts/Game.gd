@@ -11,7 +11,7 @@ var AllSentences
 
 var Index = 0
 func _ready() -> void:
-	AllSentences = Helper.GetAllFilePaths("res://Content/Easy/")
+	AllSentences = Helper.GetAllFilePaths("res://Content/")
 	for x in AllSentences:
 		print(x)
 	AllSentences.shuffle()
@@ -22,6 +22,7 @@ func ChooseNextSentence():
 		print("You have won")
 		return
 	Sentence = load(AllSentences[Index])
+	print(Sentence.resource_path + " loaded")
 	TargetText.SetSentence(Sentence)
 	TranslatedText.text = ""
 	AnswerSymbol.Hide()
@@ -43,12 +44,14 @@ func _on_text_edit_on_enter_pressed() -> void:
 		AnswerSymbol.ShowState(StatusSymbol.STATE.CORRECT)
 		
 		TargetText.SayTranslatedSentence()
+		$GoodSFX.play()
 	else:
 		print("INCORRECT!")
 		TargetText.SaySentence()
 		PlayerText.text = ""
 		AnswerSymbol.ShowState(StatusSymbol.STATE.INCORRECT)
 		Retry()
+		$BadSFX.play()
 
 
 func _on_target_sentence_completed_talking() -> void:

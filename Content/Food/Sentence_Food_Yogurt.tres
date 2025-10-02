@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://cwys34rnwi4l1"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_c2ajy"]
+
+[resource]
+script = ExtResource("1_c2ajy")
+Sentence = "五花肉"
+TranslatedSentence = "Pork Belly"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

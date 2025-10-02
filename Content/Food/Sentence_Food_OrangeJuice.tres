@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://da3e5m72jg3la"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_odjtr"]
+
+[resource]
+script = ExtResource("1_odjtr")
+Sentence = "橙汁"
+TranslatedSentence = "Orange Juice"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

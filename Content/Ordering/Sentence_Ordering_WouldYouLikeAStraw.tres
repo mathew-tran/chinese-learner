@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://pal3jl8fpdvg"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_0i5eu"]
+
+[resource]
+script = ExtResource("1_0i5eu")
+Sentence = "你想要一根吸管吗"
+TranslatedSentence = "Would you like a straw?"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

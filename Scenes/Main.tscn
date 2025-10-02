@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0h6o0scrjdcv"]
+[gd_scene load_steps=9 format=3 uid="uid://d0h6o0scrjdcv"]
 
 [ext_resource type="Script" uid="uid://b35cre6rngtif" path="res://Scripts/Game.gd" id="1_r150o"]
 [ext_resource type="Script" uid="uid://b4ftjc0rm3rvu" path="res://Scripts/TextInput.gd" id="2_idj7w"]
@@ -6,6 +6,8 @@
 [ext_resource type="Resource" uid="uid://da3fuvq6emmv2" path="res://Content/Easy/Sentence_Hello.tres" id="2_rgh2o"]
 [ext_resource type="Texture2D" uid="uid://lcjc6vgfx3km" path="res://Art/IncorrectIcon.png" id="5_pbw6q"]
 [ext_resource type="Script" uid="uid://dc5g1pst2xkj3" path="res://Scripts/StatusSymbol.gd" id="6_v1gob"]
+[ext_resource type="AudioStream" uid="uid://bwsy6ig6nyv7n" path="res://Audio/chips-stack-1.ogg" id="7_50glp"]
+[ext_resource type="AudioStream" uid="uid://fd6nejgrbjes" path="res://Audio/chips-stack-2.ogg" id="8_vy5pj"]
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("TargetText", "PlayerText", "TranslatedText", "AnswerSymbol")]
 script = ExtResource("1_r150o")
@@ -95,6 +97,12 @@ offset_right = 374.0
 offset_bottom = 715.0
 theme_override_font_sizes/font_size = 30
 text = "press enter to validate"
+
+[node name="GoodSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_50glp")
+
+[node name="BadSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_vy5pj")
 
 [connection signal="CompletedTalking" from="Panel/TargetSentence" to="." method="_on_target_sentence_completed_talking"]
 [connection signal="OnEnterPressed" from="Panel/TextEdit" to="." method="_on_text_edit_on_enter_pressed"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://b8bp6ycap2xjf"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_7vh7l"]
+
+[resource]
+script = ExtResource("1_7vh7l")
+Sentence = "一百克花生"
+TranslatedSentence = "100g of peanuts"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"
