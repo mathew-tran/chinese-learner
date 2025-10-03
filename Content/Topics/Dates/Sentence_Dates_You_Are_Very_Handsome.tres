@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://wi3rrx4rm4hk"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_5v8u4"]
+
+[resource]
+script = ExtResource("1_5v8u4")
+Sentence = "你很帅"
+TranslatedSentence = "You are very handsome"
+Pinyin = ""
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

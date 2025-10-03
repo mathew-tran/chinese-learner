@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://cwe1uv5jmgllt"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_d3tmg"]
+
+[resource]
+script = ExtResource("1_d3tmg")
+Sentence = "我们去吃点东西吧"
+TranslatedSentence = "Let's go eat some food"
+Pinyin = "Wǒmen qù chī diǎn dōngxī ba"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

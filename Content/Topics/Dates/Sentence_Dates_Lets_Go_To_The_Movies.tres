@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://d22c4jbw44iv6"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_6ygq2"]
+
+[resource]
+script = ExtResource("1_6ygq2")
+Sentence = "我们去看电影吧"
+TranslatedSentence = "Let's go to the movies"
+Pinyin = "Wǒmen qù kàn diànyǐng ba"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"
