@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://dstpk5u6ji88x"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_cd1sj"]
+
+[resource]
+script = ExtResource("1_cd1sj")
+Sentence = "正在下雨"
+TranslatedSentence = "It is raining"
+Pinyin = "Zhèngzài xià yǔ"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

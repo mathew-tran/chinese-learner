@@ -7,6 +7,7 @@ func Show(result : ResultData, indexText):
 	storedResult = result
 	$IndexText.text = indexText
 	$TargetText.text = result.Sentence.Sentence
+	$Pinyin.text = result.Sentence.Pinyin
 	$TranslatedText.text = result.Sentence.TranslatedSentence
 	$FailStatuses.text = ""
 	if result.HasPassed():

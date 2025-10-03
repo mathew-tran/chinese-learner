@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ModuleData" load_steps=2 format=3 uid="uid://dq5hs8r5hnm6q"]
+
+[ext_resource type="Script" uid="uid://d3cqgtt72i0q" path="res://DataTypes/ModuleData.gd" id="1_jdxyj"]
+
+[resource]
+script = ExtResource("1_jdxyj")
+ModuleName = "Weather"
+Topic = "res://Content/Topics/Weather"
+metadata/_custom_type_script = "uid://d3cqgtt72i0q"
