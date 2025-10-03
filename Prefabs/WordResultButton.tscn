@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgbq4ij0w68oq"]
+[gd_scene load_steps=3 format=3 uid="uid://cgbq4ij0w68oq"]
 
+[ext_resource type="Script" uid="uid://ctkt0ac0hxhbb" path="res://Scripts/WordResultButton.gd" id="1_ca678"]
 [ext_resource type="Texture2D" uid="uid://beofuduc44ie1" path="res://Art/CorrectIcon.png" id="1_yfo8u"]
 
 [node name="Button" type="Button"]
 custom_minimum_size = Vector2(600, 120)
+script = ExtResource("1_ca678")
 
 [node name="TargetText" type="Label" parent="."]
 layout_mode = 0
@@ -34,8 +36,18 @@ offset_bottom = 113.0
 texture = ExtResource("1_yfo8u")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="."]
+[node name="IndexText" type="Label" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "1/10"
+
+[node name="FailStatuses" type="Label" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 94.0
+offset_right = 47.0
+offset_bottom = 117.0
+text = "tries: 0, skipped"
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

@@ -178,9 +178,15 @@ offset_bottom = 1023.0
 
 [node name="ResultsScreen" parent="." instance=ExtResource("11_4kpch")]
 visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="CompletedTalking" from="Panel/TargetSentence" to="." method="_on_target_sentence_completed_talking"]
 [connection signal="OnEnterPressed" from="Panel/TextEdit" to="." method="_on_text_edit_on_enter_pressed"]
 [connection signal="text_changed" from="Panel/TextEdit" to="Panel/TextEdit" method="_on_text_changed"]
 [connection signal="timeout" from="Panel/TextEdit/Timer" to="Panel/TextEdit" method="_on_timer_timeout"]
 [connection signal="ButtonPressed" from="Selection" to="." method="_on_selection_button_pressed"]
+[connection signal="OnContinueButtonPressed" from="ResultsScreen" to="." method="_on_results_screen_on_continue_button_pressed"]

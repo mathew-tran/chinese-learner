@@ -10,15 +10,26 @@ extends Node2D
 var AllSentences = []
 
 var Index = 0
-var tryAmount = 0
 
+var Results = []
+var CurrentResult : ResultData
 
 	
 func ChooseNextSentence():
+	if CurrentResult:
+		Results.append(CurrentResult)
+		CurrentResult = null
+		
 	if Index >= len(AllSentences):
 		print("You have won")
+		for x in Results:
+			x.PrintResult()
+		$ResultsScreen.Show(Results)
 		return
+
 	Sentence = load(AllSentences[Index])
+	CurrentResult = ResultData.new()
+	CurrentResult.Sentence = Sentence
 	print(Sentence.resource_path + " loaded")
 	TargetText.SetSentence(Sentence)
 	TranslatedText.text = ""
@@ -29,7 +40,6 @@ func ChooseNextSentence():
 	$Panel/Pinyin.text = ""
 	Index += 1
 	PlayerText.editable = true
-	tryAmount = 0
 
 	
 func Retry():
@@ -43,6 +53,7 @@ func _input(event: InputEvent) -> void:
 		TargetText.SaySentence()
 		FailAttempt()
 	if event.is_action_pressed("F2"):
+		CurrentResult.Skipped += 1
 		ChooseNextSentence()
 		
 func _on_text_edit_on_enter_pressed() -> void:
@@ -52,32 +63,35 @@ func _on_text_edit_on_enter_pressed() -> void:
 		
 		TranslatedText.text = Sentence.TranslatedSentence
 		AnswerSymbol.ShowState(StatusSymbol.STATE.CORRECT)
-		TargetText.SayTranslatedSentence()
+		Helper.SayTranslatedSentence(Sentence.TranslatedSentence)
 		$Panel/GoodSFX.play()
+		CurrentResult.Correct += 1
 		ShowPinyin()
+		await Helper.CompletedTalking
+		ChooseNextSentence()
 	else:
 		print("INCORRECT!")
-		TargetText.SaySentence()
+		Helper.SayTranslatedSentence(Sentence.Sentence)
 		PlayerText.text = ""
 		AnswerSymbol.ShowState(StatusSymbol.STATE.INCORRECT)
 		Retry()
+		CurrentResult.Tries += 1
 		$Panel/BadSFX.play()
 		
 func FailAttempt():
-	tryAmount += 1
-	if(tryAmount >= 3):
+	CurrentResult.Tries += 1
+	if(CurrentResult.Tries >= 3):
 		ShowPinyin()
 		
 func ShowPinyin():
 	$Panel/Pinyin.text = Sentence.Pinyin
 
-func _on_target_sentence_completed_talking() -> void:
-	ChooseNextSentence()
 
 
 func _on_selection_button_pressed() -> void:
 	var modules = $Selection.GetSelectedModules()
 	AllSentences.clear()
+	Index = 0
 	for module in modules:
 		var files = module.GetData()
 		for file in files:
@@ -86,3 +100,8 @@ func _on_selection_button_pressed() -> void:
 		print(x)
 	AllSentences.shuffle()
 	ChooseNextSentence()
+
+
+func _on_results_screen_on_continue_button_pressed() -> void:
+	$ResultsScreen.visible = false
+	$Selection.visible = true
