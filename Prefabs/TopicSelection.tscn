@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://t1hi81lqi50s"]
+
+[ext_resource type="PackedScene" uid="uid://lcb1uuqo0eie" path="res://Prefabs/ModuleButton.tscn" id="1_q51iy"]
+[ext_resource type="Script" uid="uid://dyheltefooeoi" path="res://Scripts/TopicSelection.gd" id="1_tte2o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmxlf"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tte2o"]
+bg_color = Color(0, 0.684312, 0.702722, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mbvn"]
+bg_color = Color(0, 0.684312, 0.702722, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtjsi"]
+bg_color = Color(0, 0.684312, 0.702722, 1)
+
+[node name="Selection" type="Panel"]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bmxlf")
+script = ExtResource("1_tte2o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(1900, 1070)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -950.0
+offset_top = -535.0
+offset_right = 950.0
+offset_bottom = 535.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Choose Categories"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AvailableModules" type="GridContainer" parent="."]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 78.0
+offset_right = 731.0
+offset_bottom = 178.0
+columns = 5
+
+[node name="Button" parent="AvailableModules" instance=ExtResource("1_q51iy")]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 0
+offset_left = 1692.0
+offset_top = 813.0
+offset_right = 1892.0
+offset_bottom = 913.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_tte2o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3mbvn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dtjsi")
+text = "START"
+
+[connection signal="button_up" from="StartButton" to="." method="_on_start_button_button_up"]

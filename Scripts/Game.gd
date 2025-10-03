@@ -7,17 +7,12 @@ extends Node2D
 @export var TranslatedText : Label
 @export var AnswerSymbol : StatusSymbol
 
-var AllSentences
+var AllSentences = []
 
 var Index = 0
 var tryAmount = 0
 
-func _ready() -> void:
-	AllSentences = Helper.GetAllFilePaths("res://Content/")
-	for x in AllSentences:
-		print(x)
-	AllSentences.shuffle()
-	ChooseNextSentence()
+
 	
 func ChooseNextSentence():
 	if Index >= len(AllSentences):
@@ -77,4 +72,17 @@ func ShowPinyin():
 	$Panel/Pinyin.text = Sentence.Pinyin
 
 func _on_target_sentence_completed_talking() -> void:
+	ChooseNextSentence()
+
+
+func _on_selection_button_pressed() -> void:
+	var modules = $Selection.GetSelectedModules()
+	AllSentences.clear()
+	for module in modules:
+		var files = module.GetData()
+		for file in files:
+			AllSentences.append(file)
+	for x in AllSentences:
+		print(x)
+	AllSentences.shuffle()
 	ChooseNextSentence()

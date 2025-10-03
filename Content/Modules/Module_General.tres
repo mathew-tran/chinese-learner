@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ModuleData" load_steps=2 format=3 uid="uid://ck6j1hn3oen2f"]
+
+[ext_resource type="Script" uid="uid://d3cqgtt72i0q" path="res://DataTypes/ModuleData.gd" id="1_uiqul"]
+
+[resource]
+script = ExtResource("1_uiqul")
+ModuleName = "General"
+Topic = "res://Content/Topics/General"
+metadata/_custom_type_script = "uid://d3cqgtt72i0q"

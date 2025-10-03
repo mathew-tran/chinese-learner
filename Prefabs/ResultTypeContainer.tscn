@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cubldcvxapcyu"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Answered Correctly"
+
+[node name="Value" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "0"

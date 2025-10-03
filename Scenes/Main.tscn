@@ -1,14 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://d0h6o0scrjdcv"]
+[gd_scene load_steps=14 format=3 uid="uid://d0h6o0scrjdcv"]
 
 [ext_resource type="Script" uid="uid://b35cre6rngtif" path="res://Scripts/Game.gd" id="1_r150o"]
 [ext_resource type="Script" uid="uid://b4ftjc0rm3rvu" path="res://Scripts/TextInput.gd" id="2_idj7w"]
 [ext_resource type="Script" uid="uid://6mxfgqeh5g21" path="res://Scripts/TargetSentence.gd" id="2_kln2b"]
-[ext_resource type="Resource" uid="uid://da3fuvq6emmv2" path="res://Content/Easy/Sentence_Hello.tres" id="2_rgh2o"]
+[ext_resource type="Resource" uid="uid://da3fuvq6emmv2" path="res://Content/Topics/Easy/Sentence_Hello.tres" id="2_rgh2o"]
 [ext_resource type="Texture2D" uid="uid://lcjc6vgfx3km" path="res://Art/IncorrectIcon.png" id="5_pbw6q"]
 [ext_resource type="Script" uid="uid://dc5g1pst2xkj3" path="res://Scripts/StatusSymbol.gd" id="6_v1gob"]
 [ext_resource type="AudioStream" uid="uid://bwsy6ig6nyv7n" path="res://Audio/chips-stack-1.ogg" id="7_50glp"]
 [ext_resource type="AudioStream" uid="uid://fd6nejgrbjes" path="res://Audio/chips-stack-2.ogg" id="8_vy5pj"]
 [ext_resource type="PackedScene" uid="uid://vkci5daj3uyn" path="res://Prefabs/LanguagePopup.tscn" id="9_vy5pj"]
+[ext_resource type="PackedScene" uid="uid://t1hi81lqi50s" path="res://Prefabs/TopicSelection.tscn" id="10_bmxlf"]
+[ext_resource type="PackedScene" uid="uid://ba4p4wb67v05u" path="res://Prefabs/ResultsScreen.tscn" id="11_4kpch"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50glp"]
 bg_color = Color(0, 0, 0, 1)
@@ -172,7 +174,13 @@ offset_top = 965.0
 offset_right = 1153.0
 offset_bottom = 1023.0
 
+[node name="Selection" parent="." instance=ExtResource("10_bmxlf")]
+
+[node name="ResultsScreen" parent="." instance=ExtResource("11_4kpch")]
+visible = false
+
 [connection signal="CompletedTalking" from="Panel/TargetSentence" to="." method="_on_target_sentence_completed_talking"]
 [connection signal="OnEnterPressed" from="Panel/TextEdit" to="." method="_on_text_edit_on_enter_pressed"]
 [connection signal="text_changed" from="Panel/TextEdit" to="Panel/TextEdit" method="_on_text_changed"]
 [connection signal="timeout" from="Panel/TextEdit/Timer" to="Panel/TextEdit" method="_on_timer_timeout"]
+[connection signal="ButtonPressed" from="Selection" to="." method="_on_selection_button_pressed"]

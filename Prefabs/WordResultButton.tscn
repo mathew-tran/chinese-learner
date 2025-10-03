@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgbq4ij0w68oq"]
+
+[ext_resource type="Texture2D" uid="uid://beofuduc44ie1" path="res://Art/CorrectIcon.png" id="1_yfo8u"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(600, 120)
+
+[node name="TargetText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 13.0
+offset_right = 878.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 30
+text = "手机"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TranslatedText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 43.0
+offset_right = 878.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 30
+text = "Cell phone"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 71.0
+offset_bottom = 113.0
+texture = ExtResource("1_yfo8u")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "1/10"
