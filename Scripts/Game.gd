@@ -116,6 +116,7 @@ func _on_selection_button_pressed() -> void:
 	var modules = $Selection.GetSelectedModules()
 	AllSentences.clear()
 	Index = 0
+	Results.clear()
 	for module in modules:
 		var files = module.GetData()
 		for file in files:
@@ -123,7 +124,7 @@ func _on_selection_button_pressed() -> void:
 	for x in AllSentences:
 		print(x)
 	AllSentences.shuffle()
-	var maxAmount = 15
+	var maxAmount = 3
 	maxAmount = clamp(len(AllSentences), len(AllSentences), maxAmount)
 	while len(AllSentences) > maxAmount:
 		AllSentences.remove_at(0)

@@ -10,7 +10,12 @@ func _on_text_changed() -> void:
 		text = text.replace('\n', '')
 		OnEnterPressed.emit()
 	
-
+func _notification(what):
+	if what == NOTIFICATION_APPLICATION_FOCUS_IN:
+		release_focus()
+		await get_tree().create_timer(.1).timeout
+		get_window().set_ime_active(false)
+		grab_focus()
 
 func _on_timer_timeout() -> void:
 	if has_focus() == false:

@@ -31,3 +31,7 @@ func IsSelected():
 	
 func _on_button_up() -> void:
 	ChangeState(!CurrentState)
+
+func SetSelection(newState : STATE):
+	ChangeState(newState)
+	

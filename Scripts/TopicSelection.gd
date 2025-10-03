@@ -25,6 +25,7 @@ func Setup():
 func OnUpdated():
 	var modules = GetSelectedModules()
 	$StartButton.disabled = len(modules) == 0
+	
 func GetSelectedModules() -> Array[ModuleData]:
 	var selectedModules : Array[ModuleData]
 	for module in Modules.get_children():
@@ -35,3 +36,29 @@ func GetSelectedModules() -> Array[ModuleData]:
 func _on_start_button_button_up() -> void:
 	ButtonPressed.emit()
 	visible = false
+
+
+func _on_random_select_button_button_up() -> void:
+	for module in Modules.get_children():
+		module.SetSelection(ModuleButton.STATE.DESELECTED)
+	
+	var modulesToToggleOn = Modules.get_children()
+	modulesToToggleOn.shuffle()
+	
+	var amountToToggle = randi_range(2, 5)
+	while (len(modulesToToggleOn)) > amountToToggle:
+		modulesToToggleOn.remove_at(0)
+	
+	for module in modulesToToggleOn:
+		module.SetSelection(ModuleButton.STATE.SELECTED)
+	
+
+
+func _on_deselect_all_button_button_up() -> void:
+	for module in Modules.get_children():
+		module.SetSelection(ModuleButton.STATE.DESELECTED)
+
+
+func _on_select_all_button_button_up() -> void:
+	for module in Modules.get_children():
+		module.SetSelection(ModuleButton.STATE.SELECTED)

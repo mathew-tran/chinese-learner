@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://t1hi81lqi50s"]
+[gd_scene load_steps=10 format=3 uid="uid://t1hi81lqi50s"]
 
 [ext_resource type="PackedScene" uid="uid://lcb1uuqo0eie" path="res://Prefabs/ModuleButton.tscn" id="1_q51iy"]
 [ext_resource type="Script" uid="uid://dyheltefooeoi" path="res://Scripts/TopicSelection.gd" id="1_tte2o"]
@@ -14,6 +14,12 @@ bg_color = Color(0, 0.684312, 0.702722, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtjsi"]
 bg_color = Color(0, 0.684312, 0.702722, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0ekh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3v3jo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q1bb"]
 
 [node name="Selection" type="Panel"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -47,12 +53,57 @@ vertical_alignment = 1
 [node name="AvailableModules" type="GridContainer" parent="."]
 layout_mode = 2
 offset_left = 10.0
-offset_top = 78.0
-offset_right = 731.0
-offset_bottom = 178.0
+offset_top = 188.0
+offset_right = 1026.0
+offset_bottom = 600.0
 columns = 5
 
 [node name="Button" parent="AvailableModules" instance=ExtResource("1_q51iy")]
+layout_mode = 2
+
+[node name="Button2" parent="AvailableModules" instance=ExtResource("1_q51iy")]
+layout_mode = 2
+
+[node name="Button3" parent="AvailableModules" instance=ExtResource("1_q51iy")]
+layout_mode = 2
+
+[node name="Button4" parent="AvailableModules" instance=ExtResource("1_q51iy")]
+layout_mode = 2
+
+[node name="Button5" parent="AvailableModules" instance=ExtResource("1_q51iy")]
+layout_mode = 2
+
+[node name="Button6" parent="AvailableModules" instance=ExtResource("1_q51iy")]
+layout_mode = 2
+
+[node name="Button7" parent="AvailableModules" instance=ExtResource("1_q51iy")]
+layout_mode = 2
+
+[node name="Button8" parent="AvailableModules" instance=ExtResource("1_q51iy")]
+layout_mode = 2
+
+[node name="Button9" parent="AvailableModules" instance=ExtResource("1_q51iy")]
+layout_mode = 2
+
+[node name="Button10" parent="AvailableModules" instance=ExtResource("1_q51iy")]
+layout_mode = 2
+
+[node name="Button11" parent="AvailableModules" instance=ExtResource("1_q51iy")]
+layout_mode = 2
+
+[node name="Button12" parent="AvailableModules" instance=ExtResource("1_q51iy")]
+layout_mode = 2
+
+[node name="Button13" parent="AvailableModules" instance=ExtResource("1_q51iy")]
+layout_mode = 2
+
+[node name="Button14" parent="AvailableModules" instance=ExtResource("1_q51iy")]
+layout_mode = 2
+
+[node name="Button15" parent="AvailableModules" instance=ExtResource("1_q51iy")]
+layout_mode = 2
+
+[node name="Button16" parent="AvailableModules" instance=ExtResource("1_q51iy")]
 layout_mode = 2
 
 [node name="StartButton" type="Button" parent="."]
@@ -68,4 +119,75 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3mbvn")
 theme_override_styles/normal = SubResource("StyleBoxFlat_dtjsi")
 text = "START"
 
+[node name="RandomFilter" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 93.0
+offset_right = 636.0
+offset_bottom = 143.0
+theme_override_constants/separation = 20
+
+[node name="SelectAllButton" type="Button" parent="RandomFilter"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_y0ekh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3v3jo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3q1bb")
+
+[node name="Label" type="Label" parent="RandomFilter/SelectAllButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 27
+text = "SELECT ALL"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="DeselectAllButton" type="Button" parent="RandomFilter"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_y0ekh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3v3jo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3q1bb")
+
+[node name="Label" type="Label" parent="RandomFilter/DeselectAllButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 27
+text = "DESELECT ALL"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RandomSelectButton" type="Button" parent="RandomFilter"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_y0ekh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3v3jo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3q1bb")
+
+[node name="Label" type="Label" parent="RandomFilter/RandomSelectButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 27
+text = "RANDOM"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [connection signal="button_up" from="StartButton" to="." method="_on_start_button_button_up"]
+[connection signal="button_up" from="RandomFilter/SelectAllButton" to="." method="_on_select_all_button_button_up"]
+[connection signal="button_up" from="RandomFilter/DeselectAllButton" to="." method="_on_deselect_all_button_button_up"]
+[connection signal="button_up" from="RandomFilter/RandomSelectButton" to="." method="_on_random_select_button_button_up"]

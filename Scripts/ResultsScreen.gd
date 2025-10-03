@@ -7,7 +7,7 @@ signal OnContinueButtonPressed
 
 var FWords = [
 	"Try again next time",
-	"Wow"
+	"You need some more practice"
 	]
 var DWords = [
 	"Not bad",
@@ -25,7 +25,8 @@ var BWords = [
 var AWords = [
 	"Excellent",
 	"Awesome",
-	"Amazing"
+	"Amazing",
+	"Take it easy hot shot"
 ]
 func Show(results):
 	var correct = 0
