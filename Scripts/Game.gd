@@ -38,6 +38,8 @@ func ChangeState(newState):
 		
 	
 func ChooseNextSentence():
+	$Panel/ProgressBar.value = Index
+	$Panel/ProgressBar.max_value = len(AllSentences)
 	if CurrentResult:
 		Results.append(CurrentResult)
 		CurrentResult = null
@@ -57,8 +59,7 @@ func ChooseNextSentence():
 	TranslatedText.text = ""
 	AnswerSymbol.Hide()
 	PlayerText.text = ""
-	$Panel/ProgressBar.value = Index
-	$Panel/ProgressBar.max_value = len(AllSentences)
+
 	$Panel/Pinyin.text = ""
 	Index += 1
 	PlayerText.editable = true

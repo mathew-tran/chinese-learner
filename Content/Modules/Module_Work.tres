@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ModuleData" load_steps=2 format=3 uid="uid://cucfn38jihykj"]
+
+[ext_resource type="Script" uid="uid://d3cqgtt72i0q" path="res://DataTypes/ModuleData.gd" id="1_ibi2e"]
+
+[resource]
+script = ExtResource("1_ibi2e")
+ModuleName = "Work"
+Topic = "res://Content/Topics/Work"
+metadata/_custom_type_script = "uid://d3cqgtt72i0q"

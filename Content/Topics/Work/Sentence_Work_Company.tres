@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://cam8ybml8cdvc"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_3nq44"]
+
+[resource]
+script = ExtResource("1_3nq44")
+Sentence = "公司"
+TranslatedSentence = "Company"
+Pinyin = "Gōngsī"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

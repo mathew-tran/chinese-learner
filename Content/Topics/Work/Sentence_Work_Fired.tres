@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://stsaa8iaw347"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_11juk"]
+
+[resource]
+script = ExtResource("1_11juk")
+Sentence = "被解雇"
+TranslatedSentence = "Fired"
+Pinyin = "Bèi jiěgù"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"
