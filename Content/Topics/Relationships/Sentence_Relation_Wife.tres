@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://c5hjxx1dw4lr5"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_bji13"]
+
+[resource]
+script = ExtResource("1_bji13")
+Sentence = "妻子"
+TranslatedSentence = "Wife"
+Pinyin = "Qīzǐ"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://5ai4g2pt4pd5"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_wd2a1"]
+
+[resource]
+script = ExtResource("1_wd2a1")
+Sentence = "弟弟"
+TranslatedSentence = "Younger Brother"
+Pinyin = "Dìdì"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"
