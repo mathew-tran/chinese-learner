@@ -46,13 +46,7 @@ func Show(results):
 		
 	var index = 0
 	var length = len(results)
-	for result in results:
-		var text = str(index + 1) + "/" + str(length)
-		index += 1
-		var instance = WordResultButton.instantiate()
-		ResultContainer.add_child(instance)
-		instance.Show(result, text)
-		instance.OnButtonPressed.connect(OnButtonPressed)
+
 	var percent = float(correct) / float(len(results))
 	var grade = GetGrade(percent)
 	SaySomethingBasedOnGrade(grade)
@@ -64,6 +58,14 @@ func Show(results):
 	$VBoxContainer/Total.Show("Total", total)
 	$VBoxContainer/Grade.Show("Grade", grade)
 	visible = true
+	for result in results:
+		var text = str(index + 1) + "/" + str(length)
+		index += 1
+		var instance = WordResultButton.instantiate()
+		ResultContainer.add_child(instance)
+		instance.Show(result, text)
+		instance.OnButtonPressed.connect(OnButtonPressed)
+		await get_tree().create_timer(.1).timeout
 
 func SaySomethingBasedOnGrade(grade):
 	var text = "You got a " + grade + ". "
