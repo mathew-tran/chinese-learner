@@ -14,6 +14,28 @@ var Index = 0
 var Results = []
 var CurrentResult : ResultData
 
+enum STATE {
+	SELECT_TEST,
+	DOING_TEST,
+	RESULTS
+}
+
+var CurrentState = STATE.SELECT_TEST
+
+func ChangeState(newState):
+	CurrentState = newState
+	$Panel.visible = false
+	$Selection.visible = false
+	$ResultsScreen.visible = false
+	
+	if CurrentState == STATE.SELECT_TEST:
+		$Selection.visible = true
+		Helper.SayTranslatedSentence("Choose a category")
+	if CurrentState == STATE.DOING_TEST:
+		$Panel.visible = true
+	if CurrentState == STATE.RESULTS:
+		$ResultsScreen.Show(Results)
+		
 	
 func ChooseNextSentence():
 	if CurrentResult:
@@ -24,7 +46,7 @@ func ChooseNextSentence():
 		print("You have won")
 		for x in Results:
 			x.PrintResult()
-		$ResultsScreen.Show(Results)
+		ChangeState(STATE.RESULTS)
 		return
 
 	Sentence = load(AllSentences[Index])
@@ -49,9 +71,10 @@ func Retry():
 	ShowPinyin()
 	
 func _input(event: InputEvent) -> void:
+	if CurrentState != STATE.DOING_TEST:
+		return
 	if event.is_action_pressed("F1"):
 		Helper.SaySentence(Sentence.Sentence)
-		TargetText.SaySentence()
 		FailAttempt()
 	if event.is_action_pressed("F2"):
 		CurrentResult.Skipped += 1
@@ -100,13 +123,13 @@ func _on_selection_button_pressed() -> void:
 	for x in AllSentences:
 		print(x)
 	AllSentences.shuffle()
-	var maxAmount = 10
+	var maxAmount = 15
 	maxAmount = clamp(len(AllSentences), len(AllSentences), maxAmount)
 	while len(AllSentences) > maxAmount:
 		AllSentences.remove_at(0)
 	ChooseNextSentence()
+	ChangeState(STATE.DOING_TEST)
 
 
 func _on_results_screen_on_continue_button_pressed() -> void:
-	$ResultsScreen.visible = false
-	$Selection.visible = true
+	ChangeState(STATE.SELECT_TEST)

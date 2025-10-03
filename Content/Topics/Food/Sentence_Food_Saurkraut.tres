@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://dsh8nvw1msrsl"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_33vs7"]
+
+[resource]
+script = ExtResource("1_33vs7")
+Sentence = "酸菜"
+TranslatedSentence = "Sauerkraut"
+Pinyin = "Suāncài"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

@@ -5,6 +5,28 @@ var WordResultButton = preload("res://Prefabs/WordResultButton.tscn")
 
 signal OnContinueButtonPressed
 
+var FWords = [
+	"Try again next time",
+	"Wow"
+	]
+var DWords = [
+	"Not bad",
+	"Better luck next time"
+]
+var CWords = [
+	"Decent, but you can do better",
+	"Try a couple more times"
+]
+var BWords = [
+	"Great work!",
+	"Proud of you!",
+	"Great Try"
+]
+var AWords = [
+	"Excellent",
+	"Awesome",
+	"Amazing"
+]
 func Show(results):
 	var correct = 0
 	var incorrect = 0
@@ -32,6 +54,7 @@ func Show(results):
 		instance.OnButtonPressed.connect(OnButtonPressed)
 	var percent = float(correct) / float(len(results))
 	var grade = GetGrade(percent)
+	SaySomethingBasedOnGrade(grade)
 	grade += "  (" + str(snapped((percent * 100), .01)) + "%)"
 	
 	$VBoxContainer/Correct.Show("Correct", correct)
@@ -41,6 +64,24 @@ func Show(results):
 	$VBoxContainer/Grade.Show("Grade", grade)
 	visible = true
 
+func SaySomethingBasedOnGrade(grade):
+	var text = "You got a " + grade + ". "
+	
+	if grade == "F":
+		text = "You got an " + grade + ". "
+		text += FWords.pick_random()
+		
+	if grade == "D":
+		text += DWords.pick_random()
+	if grade == "C":
+		text += CWords.pick_random()
+	if grade == "B":
+		text += BWords.pick_random()
+	if grade == "A":
+		text = "You got an " + grade + ". "
+		text += AWords.pick_random()
+	Helper.SayTranslatedSentence(text)
+	
 func GetGrade(percent):
 	percent *= 100
 	if percent <= 59.9:
