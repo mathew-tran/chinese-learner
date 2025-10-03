@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ModuleData" load_steps=2 format=3 uid="uid://epkkoc5u6nv0"]
+
+[ext_resource type="Script" uid="uid://d3cqgtt72i0q" path="res://DataTypes/ModuleData.gd" id="1_wdppj"]
+
+[resource]
+script = ExtResource("1_wdppj")
+ModuleName = "Fruits"
+Topic = "res://Content/Topics/Fruits"
+metadata/_custom_type_script = "uid://d3cqgtt72i0q"
