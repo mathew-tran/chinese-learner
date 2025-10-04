@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://bdlwxpmsonix0"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_w4r82"]
+
+[resource]
+script = ExtResource("1_w4r82")
+Sentence = "二十八"
+TranslatedSentence = "Twenty eight"
+Pinyin = "Èrshíbā"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

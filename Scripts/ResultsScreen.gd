@@ -35,8 +35,8 @@ func Show(results):
 	for result in results:
 		if result.HasPassed():
 			correct += 1
-		
-		incorrect += result.Tries
+		else:
+			incorrect += 1
 		skips += result.Skipped
 		
 	var total = str(correct) + "/" + str(len(results))

@@ -125,7 +125,7 @@ func _on_selection_button_pressed() -> void:
 	for x in AllSentences:
 		print(x)
 	AllSentences.shuffle()
-	var maxAmount = 3
+	var maxAmount = 10
 	maxAmount = clamp(len(AllSentences), len(AllSentences), maxAmount)
 	while len(AllSentences) > maxAmount:
 		AllSentences.remove_at(0)

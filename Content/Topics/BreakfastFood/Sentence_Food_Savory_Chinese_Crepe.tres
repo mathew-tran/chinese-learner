@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://cbokvljn2mmou"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_vybgj"]
+
+[resource]
+script = ExtResource("1_vybgj")
+Sentence = "煎饼"
+TranslatedSentence = "Savory Chinese Crepe"
+Pinyin = "Jiānbing"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

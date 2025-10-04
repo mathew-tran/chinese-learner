@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ModuleData" load_steps=2 format=3 uid="uid://c31empjo6i3rm"]
+
+[ext_resource type="Script" uid="uid://d3cqgtt72i0q" path="res://DataTypes/ModuleData.gd" id="1_av2ho"]
+
+[resource]
+script = ExtResource("1_av2ho")
+ModuleName = "Food - Breakfast"
+Topic = "res://Content/Topics/BreakfastFood"
+metadata/_custom_type_script = "uid://d3cqgtt72i0q"
