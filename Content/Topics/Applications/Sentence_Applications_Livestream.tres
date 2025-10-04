@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://dlr4y464yw0al"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_qsjef"]
+
+[resource]
+script = ExtResource("1_qsjef")
+Sentence = "直播"
+TranslatedSentence = "Live Stream"
+Pinyin = "Zhíbò"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

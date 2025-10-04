@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://dodtrls7e1g74"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_rytub"]
+
+[resource]
+script = ExtResource("1_rytub")
+Sentence = "耳机"
+TranslatedSentence = "Headphones"
+Pinyin = "Ěrjī"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

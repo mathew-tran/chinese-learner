@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://bqiw8kohm7gh6"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_6y18k"]
+
+[resource]
+script = ExtResource("1_6y18k")
+Sentence = "笔记本电脑"
+TranslatedSentence = "Laptop"
+Pinyin = "Bǐjìběn diànnǎo"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"
