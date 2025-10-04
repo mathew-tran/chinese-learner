@@ -39,3 +39,21 @@ func GetAllFilePaths(path: String) -> Array[String]:
 		file_name = dir.get_next()
 	return file_paths
 	
+func GetGradeText(percent):
+	var str = GetGrade(percent)
+	str += "  (" + str(snapped((percent * 100), .01)) + "%)"
+	return str
+	
+func GetGrade(percent):
+	percent *= 100
+	if percent <= 59.9:
+		return "F"
+	if percent <= 69.9:
+		return "D"
+	if percent <= 79.9:
+		return "C"
+	if percent <= 89.9:
+		return "B"
+	return "A"
+	
+	

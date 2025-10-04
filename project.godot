@@ -23,6 +23,7 @@ general/text_to_speech=true
 
 Helper="*res://Scripts/Autoloads/Helper.gd"
 GameData="*res://Scripts/Autoloads/GameData.gd"
+Finder="*res://Scripts/Autoloads/Finder.gd"
 
 [display]
 

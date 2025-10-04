@@ -33,7 +33,28 @@ func Load():
 	OnLoaded.emit()
 	bLoaded = true
 	
+func GetResultData():
+	if Data.has("Results"):
+		return Data["Results"]
+	Data["Results"] = {}
 	
+func GetSentenceResult(sentence : SentenceData):
+	var resourceID = sentence.GetUniqueID()
+	GetResultData()
+	if Data.has("Results"):		
+		if Data["Results"].has(resourceID):
+			return Data["Results"][resourceID]
+	return null
+	
+func UpdateResult(resultData : ResultData):
+	var resourceID = resultData.Sentence.GetUniqueID()
+	GetResultData()
+	if Data.has("Results"):		
+		if Data["Results"].has(resourceID):
+			var cachedResult = Data["Results"][resourceID]
+			resultData.CombineResult(cachedResult)
+		Data["Results"][resourceID] = resultData.GetData()
+			
 func AwaitValue(key):
 	while bLoaded == false:
 		await get_tree().create_timer(.1).timeout
@@ -46,4 +67,3 @@ func GetValue(key):
 
 func SetValue(key, value):
 	Data[key] = value
-	Save()

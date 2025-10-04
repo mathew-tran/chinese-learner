@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Game
+
 @export var Sentence : SentenceData
 
 @export var TargetText : TargetSentence
@@ -17,7 +19,8 @@ var CurrentResult : ResultData
 enum STATE {
 	SELECT_TEST,
 	DOING_TEST,
-	RESULTS
+	RESULTS,
+	CATEGORY_INFO
 }
 
 var CurrentState = STATE.SELECT_TEST
@@ -36,7 +39,9 @@ func ChangeState(newState):
 	if CurrentState == STATE.RESULTS:
 		$ResultsScreen.Show(Results)
 		
-	
+func ShowCategoryInfo(module):
+	$CategoryInfo.Update(module)
+		
 func ChooseNextSentence():
 	$Panel/ProgressBar.value = Index
 	$Panel/ProgressBar.max_value = len(AllSentences)

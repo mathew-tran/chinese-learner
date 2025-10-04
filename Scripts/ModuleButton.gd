@@ -22,8 +22,10 @@ func ChangeState(newState : STATE):
 	CurrentState = newState
 	if CurrentState == STATE.SELECTED:
 		self_modulate = Color.WEB_GREEN
+		$InfoButton.visible = true
 	else:
 		self_modulate = Color.WHITE
+		$InfoButton.visible = false
 	Updated.emit()
 
 func IsSelected():
@@ -35,3 +37,7 @@ func _on_button_up() -> void:
 func SetSelection(newState : STATE):
 	ChangeState(newState)
 	
+
+
+func _on_info_button_button_up() -> void:
+	Finder.GetGame().ShowCategoryInfo(ModuleRef)

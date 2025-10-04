@@ -48,16 +48,18 @@ func Show(results):
 	var length = len(results)
 
 	var percent = float(correct) / float(len(results))
-	var grade = GetGrade(percent)
+	var grade = Helper.GetGrade(percent)
 	SaySomethingBasedOnGrade(grade)
-	grade += "  (" + str(snapped((percent * 100), .01)) + "%)"
 	
 	$VBoxContainer/Correct.Show("Correct", correct)
 	$VBoxContainer/Incorrect.Show("Incorrect", incorrect)
 	$VBoxContainer/Skips.Show("Skips", skips)
 	$VBoxContainer/Total.Show("Total", total)
-	$VBoxContainer/Grade.Show("Grade", grade)
+	$VBoxContainer/Grade.Show("Grade", Helper.GetGradeText(percent))
 	visible = true
+	for result in results:
+		GameData.UpdateResult(result)
+	
 	for result in results:
 		var text = str(index + 1) + "/" + str(length)
 		index += 1
@@ -66,6 +68,8 @@ func Show(results):
 		instance.Show(result, text)
 		instance.OnButtonPressed.connect(OnButtonPressed)
 		await get_tree().create_timer(.1).timeout
+		
+	GameData.Save()
 
 func SaySomethingBasedOnGrade(grade):
 	var text = "You got a " + grade + ". "
@@ -85,18 +89,7 @@ func SaySomethingBasedOnGrade(grade):
 		text += AWords.pick_random()
 	Helper.SayTranslatedSentence(text)
 	
-func GetGrade(percent):
-	percent *= 100
-	if percent <= 59.9:
-		return "F"
-	if percent <= 69.9:
-		return "D"
-	if percent <= 79.9:
-		return "C"
-	if percent <= 89.9:
-		return "B"
-	return "A"
-	
+
 func OnButtonPressed(sentence):
 	Helper.SaySentence(sentence.Sentence)
 	

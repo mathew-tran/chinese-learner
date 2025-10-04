@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://lcb1uuqo0eie"]
+[gd_scene load_steps=6 format=3 uid="uid://lcb1uuqo0eie"]
 
 [ext_resource type="Script" uid="uid://txvenq2okq17" path="res://Scripts/ModuleButton.gd" id="1_y0ekh"]
+[ext_resource type="Texture2D" uid="uid://jqit24a50vlk" path="res://Art/Info.png" id="2_3v3jo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0ekh"]
 
@@ -28,4 +29,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="InfoButton" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 175.0
+offset_right = 225.0
+offset_bottom = 50.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 30
+icon = ExtResource("2_3v3jo")
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="button_up" from="InfoButton" to="." method="_on_info_button_button_up"]

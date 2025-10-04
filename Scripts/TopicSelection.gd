@@ -6,6 +6,7 @@ class_name SelectionScreen
 var ModuleButtonClass = preload("res://Prefabs/ModuleButton.tscn")
 
 signal ButtonPressed
+signal ModulePressed(module)
 
 func _ready() -> void:
 	Setup()
@@ -26,6 +27,7 @@ func OnUpdated():
 	var modules = GetSelectedModules()
 	$StartButton.disabled = len(modules) == 0
 	
+
 func GetSelectedModules() -> Array[ModuleData]:
 	var selectedModules : Array[ModuleData]
 	for module in Modules.get_children():

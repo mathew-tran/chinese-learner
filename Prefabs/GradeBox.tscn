@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://b21ykfis8l3sp"]
+
+[ext_resource type="Script" uid="uid://cox44da5n5b4c" path="res://Scripts/GradeBox.gd" id="1_k7uxw"]
+
+[node name="GradeBox" type="VBoxContainer"]
+offset_right = 200.0
+offset_bottom = 202.0
+alignment = 1
+script = ExtResource("1_k7uxw")
+
+[node name="GradeLabel" type="Label" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+text = "GRADE"
+horizontal_alignment = 1
+
+[node name="GradeValue" type="Label" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "A"
+horizontal_alignment = 1
+
+[node name="Accuracy" type="Label" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+text = "81.2%"
+horizontal_alignment = 1
+
+[node name="Stat" type="Label" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+text = "62/100"
+horizontal_alignment = 1
