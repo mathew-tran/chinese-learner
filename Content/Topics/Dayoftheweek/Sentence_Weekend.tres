@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://5fvmr26kkxty"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_ldled"]
+
+[resource]
+script = ExtResource("1_ldled")
+Sentence = "周末"
+TranslatedSentence = "Weekend"
+Pinyin = "Zhōumò"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

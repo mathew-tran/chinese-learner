@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://s4h8rcgwkdd6"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_jc2et"]
+
+[resource]
+script = ExtResource("1_jc2et")
+Sentence = "周年快乐"
+TranslatedSentence = "Happy Anniversary"
+Pinyin = "Zhōunián kuàilè"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"

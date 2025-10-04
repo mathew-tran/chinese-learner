@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ModuleData" load_steps=2 format=3 uid="uid://dnomhgbok62s2"]
+
+[ext_resource type="Script" uid="uid://d3cqgtt72i0q" path="res://DataTypes/ModuleData.gd" id="1_k615w"]
+
+[resource]
+script = ExtResource("1_k615w")
+ModuleName = "Special Occasions"
+Topic = "res://Content/Topics/Special Occasions"
+metadata/_custom_type_script = "uid://d3cqgtt72i0q"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SentenceData" load_steps=2 format=3 uid="uid://ddt021px02j8v"]
+
+[ext_resource type="Script" uid="uid://clouyvwi1n3sy" path="res://DataTypes/SentenceData.gd" id="1_21j6q"]
+
+[resource]
+script = ExtResource("1_21j6q")
+Sentence = "清明节"
+TranslatedSentence = "Qingming Festival"
+Pinyin = "Qīngmíng jié"
+metadata/_custom_type_script = "uid://clouyvwi1n3sy"
