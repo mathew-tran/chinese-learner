@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ns5w07dr7x6n"]
+[gd_scene load_steps=6 format=3 uid="uid://ns5w07dr7x6n"]
 
 [ext_resource type="Script" uid="uid://c4v8rtyt3k7a4" path="res://Scripts/CategoryInfo.gd" id="1_wqy42"]
 [ext_resource type="PackedScene" uid="uid://bdcgtnp5tpbay" path="res://Prefabs/exit_button.tscn" id="2_bo8vk"]
 [ext_resource type="PackedScene" uid="uid://fbs0uuh22fl0" path="res://Prefabs/SentenceHistoryButton.tscn" id="2_ijrqy"]
+[ext_resource type="Script" uid="uid://ygqix8iiyorj" path="res://Scripts/ResultTypeContainer.gd" id="4_p1atu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kpch"]
 bg_color = Color(0, 0, 0, 0.901961)
@@ -55,5 +56,74 @@ alignment = 1
 
 [node name="Button" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_ijrqy")]
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 8.0
+offset_right = 270.0
+offset_bottom = 100.0
+scale = Vector2(1.3, 1.3)
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "STATS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Total" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("4_p1atu")
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/Total"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Mastered Sentences"
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="VBoxContainer/VBoxContainer/Total"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "0"
+vertical_alignment = 1
+
+[node name="Mastered" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("4_p1atu")
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/Mastered"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Mastered Sentences"
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="VBoxContainer/VBoxContainer/Mastered"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "0"
+vertical_alignment = 1
+
+[node name="Hidden" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("4_p1atu")
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/Hidden"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Hidden Sentences "
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="VBoxContainer/VBoxContainer/Hidden"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "0"
+vertical_alignment = 1
 
 [connection signal="button_up" from="ExitButton" to="." method="_on_exit_button_button_up"]

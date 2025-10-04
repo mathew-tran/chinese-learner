@@ -35,7 +35,19 @@ func GetCorrectGuesses():
 	return Correct
 
 func GetTotalGuesses():
-	return Correct + Skipped + Tries
+	var result = Correct + Skipped + Tries
+	if result == 0:
+		return 1
+	return result
+	
+func GetGrade():
+	return Helper.GetGrade(float(GetCorrectGuesses())/ float(GetTotalGuesses()))
+	
+func IsMastered():
+	return GetCorrectGuesses() >= 1 and GetGrade() == "A"
+	
+func IsHidden():
+	return GetTotalGuesses() == 0
 	
 func GetFailStatusString():
 	var str = ""

@@ -13,11 +13,33 @@ func Update(moduleToShow):
 	for sentence in SentenceHolder.get_children():
 		sentence.queue_free()
 		
-	for sentence in ModuleRef.GetData():
+	var index = 0
+
+	var sentences = ModuleRef.GetData()
+	
+	var hiddenSentences = 0
+	var masteredSentences = 0
+	var totalSentences = len(sentences)
+	
+	for sentence in sentences:
 		var instance =  SentenceHistoryButtonClass.instantiate()
 		instance.SentenceRef = load(sentence)
 		SentenceHolder.add_child(instance)
+		
+		var sentenceResult = ResultData.new()
+		sentenceResult.CombineResult(instance.SentenceRef.GetResultData())
+		
+		if sentenceResult.IsMastered():
+			masteredSentences += 1
+		if sentenceResult.IsHidden():
+			hiddenSentences += 1
+			
+		instance.SetupNumber(str(index + 1) + "/" + str(len(sentences)))
+		index += 1
 	
+	$VBoxContainer/VBoxContainer/Total.Show("Total Sentences", totalSentences)
+	$VBoxContainer/VBoxContainer/Mastered.Show("Mastered Sentences", masteredSentences)
+	$VBoxContainer/VBoxContainer/Hidden.Show("Hidden Sentences", hiddenSentences)
 	visible = true
 	
 	

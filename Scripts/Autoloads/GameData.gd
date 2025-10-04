@@ -44,7 +44,7 @@ func GetSentenceResult(sentence : SentenceData):
 	if Data.has("Results"):		
 		if Data["Results"].has(resourceID):
 			return Data["Results"][resourceID]
-	return null
+	return ResultData.new().GetData()
 	
 func UpdateResult(resultData : ResultData):
 	var resourceID = resultData.Sentence.GetUniqueID()

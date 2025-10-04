@@ -8,16 +8,18 @@ class_name SentenceHistoryButton
 @onready var TargetText = $HBoxContainer/VBoxContainer/TargetText
 @onready var TranslatedText = $HBoxContainer/VBoxContainer/TranslatedText
 
+func SetupNumber(text):
+	$HBoxContainer/Label.text = text
+	
 func _ready() -> void:
 	var result = GameData.GetSentenceResult(SentenceRef)
-	if result:
+	var sentenceResult = ResultData.new()
+	if result:		
+		sentenceResult.CombineResult(result)
 		PinyinText.text = SentenceRef.Pinyin
 		TargetText.text = SentenceRef.Sentence
 		TranslatedText.text = SentenceRef.TranslatedSentence
-		$HBoxContainer/Panel.self_modulate = Color.WHITE
-		
-		var sentenceResult = ResultData.new()
-		sentenceResult.CombineResult(result)
+		$HBoxContainer/Panel.self_modulate = Color.WHITE		
 		$HBoxContainer/Panel/GradeBox.Setup(sentenceResult.GetCorrectGuesses(), sentenceResult.GetTotalGuesses())
 	else:
 		PinyinText.text = "???"
@@ -25,7 +27,7 @@ func _ready() -> void:
 		TranslatedText.text = "???"
 		self_modulate = Color.DARK_GRAY
 		$HBoxContainer/Panel.self_modulate = Color.BLACK
-		
+	$Mastered.visible = sentenceResult.IsMastered()
 		
 
 

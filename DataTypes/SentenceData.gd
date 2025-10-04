@@ -8,3 +8,6 @@ class_name SentenceData
 
 func GetUniqueID():
 	return resource_path.split("/")[-1]
+
+func GetResultData():
+	return GameData.GetSentenceResult(self)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://fbs0uuh22fl0"]
+[gd_scene load_steps=9 format=3 uid="uid://fbs0uuh22fl0"]
 
 [ext_resource type="Script" uid="uid://dv4bx80m6fjbo" path="res://Scripts/SentenceHistoryButton.gd" id="1_ifqeg"]
 [ext_resource type="Resource" uid="uid://5fvmr26kkxty" path="res://Content/Topics/Dayoftheweek/Sentence_Weekend.tres" id="2_jeb25"]
 [ext_resource type="PackedScene" uid="uid://b21ykfis8l3sp" path="res://Prefabs/GradeBox.tscn" id="3_h3xht"]
+[ext_resource type="Texture2D" uid="uid://dkgsb4jgeia7s" path="res://Art/Mastered.png" id="4_4mqtx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqy42"]
 
@@ -23,9 +24,18 @@ SentenceRef = ExtResource("2_jeb25")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 11.0
+offset_right = 1135.0
+offset_bottom = 200.0
 theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "1/10"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="HBoxContainer"]
 custom_minimum_size = Vector2(200, 200)
@@ -61,5 +71,13 @@ theme_override_font_sizes/font_size = 37
 text = "Cell phone"
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Mastered" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 56.0
+offset_right = 194.0
+offset_bottom = 120.0
+texture = ExtResource("4_4mqtx")
 
 [connection signal="button_up" from="." to="." method="_on_button_up"]
