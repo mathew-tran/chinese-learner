@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://t1hi81lqi50s"]
+[gd_scene load_steps=11 format=3 uid="uid://t1hi81lqi50s"]
 
 [ext_resource type="PackedScene" uid="uid://lcb1uuqo0eie" path="res://Prefabs/ModuleButton.tscn" id="1_q51iy"]
 [ext_resource type="Script" uid="uid://dyheltefooeoi" path="res://Scripts/TopicSelection.gd" id="1_tte2o"]
+[ext_resource type="Script" uid="uid://yymeixsfhxxs" path="res://Scripts/OptionsButton.gd" id="3_3mbvn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmxlf"]
 bg_color = Color(0, 0, 0, 1)
@@ -119,6 +120,20 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3mbvn")
 theme_override_styles/normal = SubResource("StyleBoxFlat_dtjsi")
 text = "START"
 
+[node name="OptionsButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 0
+offset_left = 1667.0
+offset_top = 25.0
+offset_right = 1887.0
+offset_bottom = 125.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_tte2o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3mbvn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dtjsi")
+text = "OPTIONS"
+script = ExtResource("3_3mbvn")
+
 [node name="RandomFilter" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 28.0
@@ -135,12 +150,10 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3v3jo")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3q1bb")
 
 [node name="Label" type="Label" parent="RandomFilter/SelectAllButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+offset_left = 1.0
+offset_right = 199.0
+offset_bottom = 50.0
 theme_override_font_sizes/font_size = 27
 text = "SELECT ALL"
 horizontal_alignment = 1
@@ -188,6 +201,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [connection signal="button_up" from="StartButton" to="." method="_on_start_button_button_up"]
+[connection signal="button_up" from="OptionsButton" to="OptionsButton" method="_on_button_up"]
 [connection signal="button_up" from="RandomFilter/SelectAllButton" to="." method="_on_select_all_button_button_up"]
 [connection signal="button_up" from="RandomFilter/DeselectAllButton" to="." method="_on_deselect_all_button_button_up"]
 [connection signal="button_up" from="RandomFilter/RandomSelectButton" to="." method="_on_random_select_button_button_up"]

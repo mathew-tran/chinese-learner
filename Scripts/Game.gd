@@ -137,6 +137,8 @@ func _on_selection_button_pressed() -> void:
 	ChooseNextSentence()
 	ChangeState(STATE.DOING_TEST)
 
-
+func ShowOptions():
+	$OptionsMenu.visible = true
+	
 func _on_results_screen_on_continue_button_pressed() -> void:
 	ChangeState(STATE.SELECT_TEST)

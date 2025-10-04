@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0h6o0scrjdcv"]
+[gd_scene load_steps=16 format=3 uid="uid://d0h6o0scrjdcv"]
 
 [ext_resource type="Script" uid="uid://b35cre6rngtif" path="res://Scripts/Game.gd" id="1_r150o"]
 [ext_resource type="Script" uid="uid://b4ftjc0rm3rvu" path="res://Scripts/TextInput.gd" id="2_idj7w"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://t1hi81lqi50s" path="res://Prefabs/TopicSelection.tscn" id="10_bmxlf"]
 [ext_resource type="PackedScene" uid="uid://ba4p4wb67v05u" path="res://Prefabs/ResultsScreen.tscn" id="11_4kpch"]
 [ext_resource type="PackedScene" uid="uid://ns5w07dr7x6n" path="res://Prefabs/CategoryInfo.tscn" id="12_grg3l"]
+[ext_resource type="PackedScene" uid="uid://omcc73783bv6" path="res://Prefabs/OptionsMenu.tscn" id="13_frkhe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50glp"]
 bg_color = Color(0, 0, 0, 1)
@@ -186,6 +187,11 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="CategoryInfo" parent="." instance=ExtResource("12_grg3l")]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="OptionsMenu" parent="." instance=ExtResource("13_frkhe")]
 visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0

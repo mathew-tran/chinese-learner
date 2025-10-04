@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://omcc73783bv6"]
+
+[ext_resource type="Script" uid="uid://dks33onadcymq" path="res://Scripts/ClearDataButton.gd" id="1_qu2kj"]
+[ext_resource type="Script" uid="uid://neohjbxxtktq" path="res://Scripts/OptionsMenu.gd" id="1_t25ud"]
+[ext_resource type="PackedScene" uid="uid://bdcgtnp5tpbay" path="res://Prefabs/exit_button.tscn" id="2_d2mvf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grg3l"]
+bg_color = Color(0, 0, 0, 0.988235)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frkhe"]
+bg_color = Color(0.477903, 0, 0.160553, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1p5hy"]
+bg_color = Color(0.477903, 0, 0.160553, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1m7h"]
+bg_color = Color(0.477903, 0, 0.160553, 1)
+
+[node name="OptionsMenu" type="Panel"]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_grg3l")
+script = ExtResource("1_t25ud")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(800, 800)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -497.0
+offset_right = 400.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
+
+[node name="ClearDataButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_frkhe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1p5hy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h1m7h")
+text = "CLEAR DATA"
+script = ExtResource("1_qu2kj")
+
+[node name="ExitButton" parent="." instance=ExtResource("2_d2mvf")]
+layout_mode = 1
+offset_top = -86.0
+offset_bottom = -36.0
+
+[connection signal="button_up" from="VBoxContainer/ClearDataButton" to="VBoxContainer/ClearDataButton" method="_on_button_up"]
+[connection signal="button_up" from="ExitButton" to="." method="_on_exit_button_button_up"]

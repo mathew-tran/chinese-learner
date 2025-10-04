@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ns5w07dr7x6n"]
+[gd_scene load_steps=5 format=3 uid="uid://ns5w07dr7x6n"]
 
 [ext_resource type="Script" uid="uid://c4v8rtyt3k7a4" path="res://Scripts/CategoryInfo.gd" id="1_wqy42"]
+[ext_resource type="PackedScene" uid="uid://bdcgtnp5tpbay" path="res://Prefabs/exit_button.tscn" id="2_bo8vk"]
 [ext_resource type="PackedScene" uid="uid://fbs0uuh22fl0" path="res://Prefabs/SentenceHistoryButton.tscn" id="2_ijrqy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kpch"]
@@ -16,21 +17,10 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4kpch")
 script = ExtResource("1_wqy42")
 
-[node name="ExitButton" type="Button" parent="."]
-custom_minimum_size = Vector2(200, 50)
+[node name="ExitButton" parent="." instance=ExtResource("2_bo8vk")]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -65.0
-offset_right = 100.0
-offset_bottom = -15.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "X"
+offset_top = -79.0
+offset_bottom = -29.0
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
