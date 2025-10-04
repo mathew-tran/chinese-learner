@@ -34,6 +34,7 @@ func ChangeState(newState):
 	if CurrentState == STATE.SELECT_TEST:
 		$Selection.visible = true
 		Helper.SayTranslatedSentence("Choose a category")
+		$Selection.Refresh()
 	if CurrentState == STATE.DOING_TEST:
 		$Panel.visible = true
 	if CurrentState == STATE.RESULTS:

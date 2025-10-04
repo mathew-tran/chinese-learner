@@ -39,7 +39,10 @@ func _on_start_button_button_up() -> void:
 	ButtonPressed.emit()
 	visible = false
 
-
+func Refresh():
+	for module in Modules.get_children():
+		module.Refresh()
+		
 func _on_random_select_button_button_up() -> void:
 	for module in Modules.get_children():
 		module.SetSelection(ModuleButton.STATE.DESELECTED)

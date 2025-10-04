@@ -23,11 +23,14 @@ func Update(moduleToShow):
 	
 	for sentence in sentences:
 		var instance =  SentenceHistoryButtonClass.instantiate()
-		instance.SentenceRef = load(sentence)
+		var sentenceData = load(sentence) as SentenceData
+		instance.SentenceRef = sentenceData
 		SentenceHolder.add_child(instance)
 		
 		var sentenceResult = ResultData.new()
-		sentenceResult.CombineResult(instance.SentenceRef.GetResultData())
+		
+		if sentenceData.GetResultData():
+			sentenceResult.CombineResult(sentenceData.GetResultData())
 		
 		if sentenceResult.IsMastered():
 			masteredSentences += 1

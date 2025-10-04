@@ -1,12 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://ns5w07dr7x6n"]
+[gd_scene load_steps=9 format=3 uid="uid://ns5w07dr7x6n"]
 
 [ext_resource type="Script" uid="uid://c4v8rtyt3k7a4" path="res://Scripts/CategoryInfo.gd" id="1_wqy42"]
 [ext_resource type="PackedScene" uid="uid://bdcgtnp5tpbay" path="res://Prefabs/exit_button.tscn" id="2_bo8vk"]
 [ext_resource type="PackedScene" uid="uid://fbs0uuh22fl0" path="res://Prefabs/SentenceHistoryButton.tscn" id="2_ijrqy"]
 [ext_resource type="Script" uid="uid://ygqix8iiyorj" path="res://Scripts/ResultTypeContainer.gd" id="4_p1atu"]
+[ext_resource type="Texture2D" uid="uid://jqit24a50vlk" path="res://Art/Info.png" id="5_66qnl"]
+[ext_resource type="Script" uid="uid://lgksegrmp27y" path="res://Scripts/MasteredSentencesInfo.gd" id="6_00u63"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kpch"]
 bg_color = Color(0, 0, 0, 0.901961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5nc3o"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0.64657, 0.612211, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 
 [node name="CategoryInfo" type="Panel"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -109,6 +122,36 @@ theme_override_font_sizes/font_size = 20
 text = "0"
 vertical_alignment = 1
 
+[node name="MasteredSentencesInfo" type="Button" parent="VBoxContainer/VBoxContainer/Mastered/Value"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 23.0769
+offset_top = 5.38461
+offset_right = 43.0769
+offset_bottom = 25.3846
+icon = ExtResource("5_66qnl")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("6_00u63")
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/Mastered/Value/MasteredSentencesInfo"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 11.3846
+offset_top = -27.0769
+offset_right = 745.385
+offset_bottom = 6.92307
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_5nc3o")
+text = "Master sentences by getting an \"A\" and guessing correctly at least 10 times!"
+vertical_alignment = 1
+
 [node name="Hidden" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 script = ExtResource("4_p1atu")
@@ -127,3 +170,5 @@ text = "0"
 vertical_alignment = 1
 
 [connection signal="button_up" from="ExitButton" to="." method="_on_exit_button_button_up"]
+[connection signal="mouse_entered" from="VBoxContainer/VBoxContainer/Mastered/Value/MasteredSentencesInfo" to="VBoxContainer/VBoxContainer/Mastered/Value/MasteredSentencesInfo" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/VBoxContainer/Mastered/Value/MasteredSentencesInfo" to="VBoxContainer/VBoxContainer/Mastered/Value/MasteredSentencesInfo" method="_on_mouse_exited"]

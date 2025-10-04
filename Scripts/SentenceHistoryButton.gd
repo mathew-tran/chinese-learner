@@ -21,13 +21,15 @@ func _ready() -> void:
 		TranslatedText.text = SentenceRef.TranslatedSentence
 		$HBoxContainer/Panel.self_modulate = Color.WHITE		
 		$HBoxContainer/Panel/GradeBox.Setup(sentenceResult.GetCorrectGuesses(), sentenceResult.GetTotalGuesses())
+		$Mastered.visible = sentenceResult.IsMastered()
 	else:
 		PinyinText.text = "???"
 		TargetText.text = "???"
 		TranslatedText.text = "???"
 		self_modulate = Color.DARK_GRAY
 		$HBoxContainer/Panel.self_modulate = Color.BLACK
-	$Mastered.visible = sentenceResult.IsMastered()
+		$Mastered.visible = false
+	
 		
 
 

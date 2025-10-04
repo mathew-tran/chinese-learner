@@ -17,7 +17,12 @@ func Setup(module : ModuleData):
 	$Label.text = module.ModuleName
 	ModuleRef = module
 	ChangeState(STATE.DESELECTED)
-
+	
+func Refresh():
+	$ProgressBar.value =  ModuleRef.GetModuleCompletionPercent()
+	if $ProgressBar.value >= 1:
+		$ProgressBar.self_modulate = Color.GOLD
+	
 func ChangeState(newState : STATE):
 	CurrentState = newState
 	if CurrentState == STATE.SELECTED:
@@ -27,6 +32,7 @@ func ChangeState(newState : STATE):
 		self_modulate = Color.WHITE
 		$InfoButton.visible = false
 	Updated.emit()
+	Refresh()
 
 func IsSelected():
 	return CurrentState == STATE.SELECTED

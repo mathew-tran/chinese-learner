@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://lcb1uuqo0eie"]
+[gd_scene load_steps=8 format=3 uid="uid://lcb1uuqo0eie"]
 
 [ext_resource type="Script" uid="uid://txvenq2okq17" path="res://Scripts/ModuleButton.gd" id="1_y0ekh"]
 [ext_resource type="Texture2D" uid="uid://jqit24a50vlk" path="res://Art/Info.png" id="2_3v3jo"]
@@ -8,6 +8,20 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3v3jo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q1bb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwh0j"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_44wby"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Button" type="Button"]
 custom_minimum_size = Vector2(200, 100)
@@ -40,6 +54,27 @@ theme_override_font_sizes/font_size = 30
 icon = ExtResource("2_3v3jo")
 icon_alignment = 1
 expand_icon = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+self_modulate = Color(0.196078, 1, 0.94902, 1)
+custom_minimum_size = Vector2(180, 3)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -6.0
+offset_right = 90.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_qwh0j")
+theme_override_styles/fill = SubResource("StyleBoxFlat_44wby")
+max_value = 1.0
+value = 0.3
+show_percentage = false
 
 [connection signal="button_up" from="." to="." method="_on_button_up"]
 [connection signal="button_up" from="InfoButton" to="." method="_on_info_button_button_up"]

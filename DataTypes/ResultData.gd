@@ -36,11 +36,11 @@ func GetCorrectGuesses():
 
 func GetTotalGuesses():
 	var result = Correct + Skipped + Tries
-	if result == 0:
-		return 1
 	return result
 	
 func GetGrade():
+	if GetTotalGuesses() == 0:
+		return "???"
 	return Helper.GetGrade(float(GetCorrectGuesses())/ float(GetTotalGuesses()))
 	
 func IsMastered():

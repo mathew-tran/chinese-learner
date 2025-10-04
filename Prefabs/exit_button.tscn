@@ -1,4 +1,13 @@
-[gd_scene format=3 uid="uid://bdcgtnp5tpbay"]
+[gd_scene load_steps=4 format=3 uid="uid://bdcgtnp5tpbay"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eo8ym"]
+bg_color = Color(0, 0.69041, 0.659262, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbo0s"]
+bg_color = Color(0, 0.69041, 0.659262, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrep2"]
+bg_color = Color(0, 0.69041, 0.659262, 1)
 
 [node name="ExitButton" type="Button"]
 custom_minimum_size = Vector2(200, 50)
@@ -13,4 +22,8 @@ offset_right = 100.0
 offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_eo8ym")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cbo0s")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rrep2")
 text = "X"

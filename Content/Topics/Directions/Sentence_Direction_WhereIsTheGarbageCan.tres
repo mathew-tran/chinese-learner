@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_2liwh")
-Sentence = "垃圾桶在哪里"
+Sentence = "垃圾在哪里"
 TranslatedSentence = "Where is the garbage can?"
-Pinyin = "Lèsè tǒng zài nǎlǐ"
+Pinyin = "Lèsè zài nǎlǐ"
 metadata/_custom_type_script = "uid://clouyvwi1n3sy"
